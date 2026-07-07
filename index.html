@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Consultório Médico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🏥 Sistema do Consultório Médico</h1>
+        <p>Gerenciamento de médicos, agendas e abordagem pedagógica.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Cadastrar Novo Médico</h2>
+            <form id="form-medico">
+                <div class="form-group">
+                    <label for="nome-medico">Nome do Médico:</label>
+                    <input type="text" id="nome-medico" placeholder="Ex: Dr. Carlos Andrade" required>
+                </div>
+                <div class="form-group">
+                    <label for="crm">CRM:</label>
+                    <input type="text" id="crm" placeholder="Ex: 12345-SP" required>
+                </div>
+                <div class="form-group">
+                    <label for="especialidade">Especialidade:</label>
+                    <input type="text" id="especialidade" placeholder="Ex: Pediatria" required>
+                </div>
+                <button type="submit" class="btn">Cadastrar Médico</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Agendar Consulta (Foco Pedagógico)</h2>
+            <form id="form-consulta">
+                <div class="form-group">
+                    <label for="selecionar-medico">Selecionar Médico:</label>
+                    <select id="selecionar-medico" required>
+                        <option value="">-- Escolha um médico --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nome-paciente">Nome do Paciente:</label>
+                    <input type="text" id="nome-paciente" placeholder="Ex: Mariana Souza" required>
+                </div>
+                <div class="form-group">
+                    <label for="data-hora">Data e Hora:</label>
+                    <input type="datetime-local" id="data-hora" required>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="Checklist-pedagogico">
+                    <label for="Checklist-pedagogico">💡 Ativar protocolo pedagógico (Linguagem acessível e acolhimento)</label>
+                </div>
+                <button type="submit" class="btn btn-secundario">Agendar Consulta</button>
+            </form>
+        </section>
+
+        <section class="card lista-consultas">
+            <h2>Agenda de Consultas Marcadas</h2>
+            <table id="tabela-agenda">
+                <thead>
+                    <tr>
+                        <th>Médico</th>
+                        <th>Paciente</th>
+                        <th>Data/Hora</th>
+                        <th>Abordagem</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
